@@ -4,6 +4,10 @@ from django.utils import timezone
 class Category(models.Model):
     nome = models.CharField(max_length=50)
 
+    class Meta:
+        verbose_name = 'Category'
+        verbose_name_plural = 'Categories'
+
     def __str__(self) -> str:
         return f'{self.nome}'
 

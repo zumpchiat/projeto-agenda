@@ -3,4 +3,12 @@ from contact.models import Contact
 
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
-    ...
+    list_display = ('id','first_name', 'last_name', 'phone', 'email', 'created_date',)
+    ordering = ['-id']
+
+    #list_filter = 'created_date',
+    search_fields = 'id','first_name',
+    list_per_page = 12
+    list_max_show_all = 25
+    list_editable = 'last_name', 'phone',
+    

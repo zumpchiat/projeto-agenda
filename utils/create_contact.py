@@ -7,7 +7,7 @@ from random import choice
 import django
 from django.conf import settings
 DJANGO_BASE_DIR = Path(__file__).parent.parent
-NUMBER_OF_OBJECTS = 1000
+NUMBER_OF_OBJECTS = 100
 
 sys.path.append(str(DJANGO_BASE_DIR))
 os.environ['DJANGO_SETTINGS_MODULE'] = 'core.settings'

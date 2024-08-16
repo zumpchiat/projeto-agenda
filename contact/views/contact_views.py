@@ -4,7 +4,8 @@ from contact.models import Contact
 def index(request):
     contacts = Contact.objects.all().filter(show=True).order_by('-id')[:12]
     context = {
-        'contacts': contacts
+        'contacts': contacts,
+        'site_title': 'Contatos - '
     }
     return render(
         request,
@@ -13,9 +14,13 @@ def index(request):
     )
 
 def contact(request, id):
-    contact = get_object_or_404(Contact.objects.filter(show=True), pk=id)
+    contact = get_object_or_404(
+        Contact.objects.filter(show=True), pk=id
+        )
+    contact_name = f'{contact.first_name} {contact.last_name} - '
     context = {
-        'contact':contact
+        'contact':contact,
+        'site_title': contact_name
     }
 
     return render(

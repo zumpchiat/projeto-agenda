@@ -3,7 +3,7 @@
 
 {% block content %}
     
-    {% if contacts %}
+    {% if page_obj %}
 
     <div class="responsive-table">
         <table class="contacts-table">
@@ -20,10 +20,10 @@
             </thead>
 
             <tbody>
-                {% for contact in contacts %}
+                {% for contact in page_obj %}
                 <tr class="table-row">
                     
-                    <td class="table-cel"><a  href="{{contact.id}}">{{contact.id}} </a></td> 
+                    <td class="table-cel"><a  href="{% url 'contact:contact' contact.id %}">{{contact.id}} </a></td> 
                     <td class="table-cel">{{contact.first_name}} {{contact.last_name}}</td>
                     <td class="table-cel">{{contact.phone}}</td>
                     <td class="table-cel">{{contact.email}}</td>
@@ -32,6 +32,8 @@
             </tbody>
         </table>
     </div>
+    
+    
     {% else %}
         <div class="single-contact">
             <h1 class="single-contact-name">

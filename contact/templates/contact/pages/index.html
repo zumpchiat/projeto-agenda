@@ -3,6 +3,8 @@
 
 {% block content %}
     
+    {% if contacts %}
+
     <div class="responsive-table">
         <table class="contacts-table">
             <caption class="table-caption">
@@ -30,6 +32,15 @@
             </tbody>
         </table>
     </div>
+    {% else %}
+        <div class="single-contact">
+            <h1 class="single-contact-name">
+                <p>Nenhum contato encontrado</p>
+            </h1>
+
+                
+        </div>
+    {% endif %}
     
     
 

@@ -15,9 +15,9 @@
         <p><b>Description: </b> {{ contact.description }}</p>
         <p><b>Create: </b> {{ contact.created_date }}</p>
 
-       
+        <a href="{% url 'contact:update' contact.id %}"> Atualizar</a>
     </div>
-
+    
     
 
    

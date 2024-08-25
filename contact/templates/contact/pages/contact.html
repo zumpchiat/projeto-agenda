@@ -14,7 +14,13 @@
         <p><b>Category: </b> {{ contact.category.nome }}</p>
         <p><b>Description: </b> {{ contact.description }}</p>
         <p><b>Create: </b> {{ contact.created_date }}</p>
-
+        
+        {% if contact.picture %}
+        <p>
+            
+            <img src="{{contact.picture.url}}" alt="{{contact.first_name}}">
+        </p>
+        {% endif %}
         
 
         <div class="contact-links">
